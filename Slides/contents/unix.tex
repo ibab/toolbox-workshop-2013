@@ -1,0 +1,54 @@
+\section{Unix Shell}
+\begin{frame}{Unix Shell}
+  \tableofcontents[sectionstyle=show/hide,
+                   hideothersubsections]
+\end{frame}
+
+\subsection{Dateisystem}
+\begin{frame}{Dateisystem}
+  \begin{itemize}
+    \item \texttt{/} trennt Teile eines Pfads
+    \item Das gesamte Dateisystem bildet \emph{einen} Baum
+    \item Es gibt immer ein aktuelles Verzeichnis
+    \item Pfade können absolut oder relativ angegeben werden
+    \item drei spezielle Verzeichnisse:
+      \begin{itemize}
+        \item \texttt{.} das aktuelle Verzeichnis
+        \item \texttt{..} das Oberverzeichnis des aktuellen Verzeichnisses
+        \item \texttt{\textasciitilde} das Heimverzeichnis
+      \end{itemize}
+    \item Dateien, die mit \texttt{.} anfangen sind versteckt
+  \end{itemize}
+\end{frame}
+
+\subsection{Befehle}
+\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
+  \begin{tabular}{lp{20em}}
+    \texttt{man \textit{topic}} & für manual: zeigt die Hilfe für ein Programm \\
+    \texttt{pwd} & für print working directory: zeigt das aktuelle Verzeichnis \\
+    \texttt{cd \textit{directory}} & für change directory: wechselt in das angegebene Verzeichnis
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{ls}
+  \begin{tabular}{lp{20em}}
+    \texttt{ls [\textit{directory}]} & für list: zeigt den Inhalt eines Verzeichnisses an \\
+    \texttt{ls -l} & zeigt mehr Informationen über Dateien und Verzeichnisse \\
+    \texttt{ls -a} & zeigt auch versteckte Dateien
+  \end{tabular}
+\end{frame}
+
+\subsection{Nützliche Shell Features}
+\begin{frame}{Tastaturkürzel}
+  \begin{tabular}{lp{20em}}
+    \texttt{Ctrl-C} & beendet das laufende Programm \\
+    \texttt{Ctrl-D} & EOF (end of file) eingeben, kann Programme beenden \\
+    \texttt{Ctrl-L} & leert den Bildschirm
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Globbing (\texttt{*})}
+  \begin{tabular}{lp{20em}}
+    \texttt{*} & wird ersetzt durch alle passenden Dateien
+  \end{tabular}
+\end{frame}

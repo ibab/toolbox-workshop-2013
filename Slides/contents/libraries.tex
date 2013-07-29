@@ -1,0 +1,194 @@
+
+\subsection{Bibliotheken}
+
+\begin{frame}{Beispiele und Aufgaben herunterladen}
+  Lade das Repository \\
+  \url{https://github.com/ibab/toolbox} \\
+  per \texttt{git clone} herunter.
+\end{frame}
+
+\subsubsection{PyLab}
+\begin{frame}{PyLab}
+  \begin{itemize}
+    \item bündelt NumPy, SciPy und Matplotlib
+    \item starten mit \texttt{ipython3 --pylab}
+  \end{itemize}
+\end{frame}
+
+\subsubsection{NumPy}
+\begin{frame}{NumPy}
+  \begin{center}
+    \includegraphics[width=100px]{../Notes/img/numpy.png}
+  \end{center}
+  \begin{itemize}
+    \item $n$-dimensionale Arrays
+    \item Funktionen, die auf denen arbeiten
+    \item Operatoren wirken elementweise
+    \item wird meist mit \texttt{np} abgekürzt
+  \end{itemize}
+
+  Konstanten:
+  \begin{itemize}
+    \item \texttt{pi}
+    \item \texttt{e}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Arrays erstellen}
+  \begin{itemize}
+    \item \texttt{array}: konvertiert irgendwas (Liste, Tupel, …) zu einem Array
+    \item \texttt{linspace(start, end, number)}: Array aus \texttt{number} Zahlen zwischen \texttt{start} und \texttt{end} in gleichem Abstand
+    \item \texttt{arange(start, end, step)}: Array aus Zahlen zwischen \texttt{start} und \texttt{end} mit dem Abstand \texttt{step}
+    \item \texttt{zeros(shape)}: Array aus Nullen der Größe \texttt{shape}
+    \item \texttt{ones(shape)}: Array aus Einsen der Größe \texttt{shape}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Elementweise Funktionen}
+  Beispiele:
+  \begin{itemize}
+    \item \texttt{sqrt}
+    \item \texttt{exp}, \texttt{log}
+    \item \texttt{sin}
+    \item \texttt{deg2rad}, \texttt{rad2deg}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reduzierende Funktionen}
+  Beispiele:
+  \begin{itemize}
+    \item \texttt{sum}
+    \item \texttt{mean}
+    \item \texttt{max}, \texttt{min}
+    \item \texttt{ediff1d}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{It/Output}
+  \begin{itemize}
+    \item \texttt{loadtxt(file [, unpack=True])}: Lädt eine Datei in ein Array.
+      \texttt{unpack=True} transponiert das Array
+    \item \texttt{savetxt(file, array)}: Speichert ein Array in eine Datei
+  \end{itemize}
+\end{frame}
+
+\subsubsection{SciPy}
+\begin{frame}{SciPy}
+  \begin{center}
+    \includegraphics{../Notes/img/scipy.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Nützliche Funktionen}
+  \begin{itemize}
+    \item \texttt{optimize.curve\_fit}: fittet nichtlineare Funktionen
+    \item \texttt{stats.sem}: gibt den Fehler des Mittelwerts
+    \item \texttt{constants.C2K}: konvertiert Celsius in Kelvin
+    \item \texttt{constants.K2C}: konvertiert Kelvin in Celsius
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Konstanten}
+  \begin{itemize}
+    \item \texttt{constants.physical\_constants}: enthält diverse physikalische Konstanten, ihre Fehler und Einheiten (aus CODATA)
+  \end{itemize}
+\end{frame}
+
+\subsubsection{matplotlib}
+\begin{frame}{matplotlib}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../Notes/img/matplotlib.pdf}
+  \end{center}
+  \begin{itemize}
+    \item prozedurales Interface (pyplot, in PyLab) \mdash\ einfacher
+    \item objektorientiertes Interface (Beschreibung im Skript) \mdash\ flexibler, schöner für größere Skripte oder Programme
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/hist.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/errorbars.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/finance.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/polar.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/tex.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/mplot3d.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Plotten mit IPython}
+  Einfach \texttt{ipython3 --pylab} ausführen und z.B. Folgendes eintippen:
+\begin{minted}{python}
+  In [1]: x = linspace(0, 1, 100)
+  In [2]: plot(x, x**2, 'b-')
+\end{minted}
+  An dem Plot kann interaktiv weiter gearbeitet werden.
+\end{frame}
+
+\begin{frame}[fragile]{Plots in .py-Dateien erstellen}
+  Erst einmal Bibliotheken importieren.\\
+  Plot erscheint, wenn man \texttt{show()} aufruft.
+\begin{minted}{python}
+from numpy import linspace, pi, sin
+import matplotlib.pyplot as plt
+x = linspace(0, 2 * pi, 1000)
+plt.plot(x, sin(x), 'r--')
+plt.show()
+# oder: plt.savefig('plot.pdf')
+\end{minted}
+\end{frame}
+
+\begin{frame}{Verschiedene Arten von Plots}
+  \begin{itemize}
+    \item \texttt{plot}
+    \item \texttt{errorbar} - Plot mit Fehlerbalken
+    \item \texttt{semilogy}, \texttt{semilogx} - logarithmische Skalierung
+    \item \texttt{hist} - Histogramme
+    \item \texttt{polar} - polare Plots
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Nützliche Funktionen}
+  \begin{itemize}
+    \item \texttt{title('...')}
+    \item \texttt{xlabel('...'), ylabel('...')}
+    \item \texttt{grid()}
+    \item \texttt{xlim(a, b)}, \texttt{ylim(a, b)}
+    \item \texttt{legend()} (beim Plot \texttt{label='...'} einstellen
+    \item \texttt{clf()}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Matplotlib einstellen}
+  2 Möglichkeiten:
+  \begin{itemize}
+    \item direkt in der Code-Datei
+    \item Datei \texttt{matplotlibrc} im selben Ordner
+  \end{itemize}
+  $\Rightarrow$ siehe Dokumentation
+\end{frame}

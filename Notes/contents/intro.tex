@@ -1,0 +1,90 @@
+\chapter{Einleitung}
+\section{Motivation}
+\url{http://www.americanscientist.org/issues/pub/wheres-the-real-bottleneck-in-scientific-computing}
+
+\section{PeP et al.}
+\begin{center}
+  \includegraphics[width=.3\paperwidth]{img/peplogox.png} \\
+\end{center}
+\begin{quote}
+\textit{Der Verein versteht sich als Einrichtung für Absolventen, Studierende, Mitarbeiter sowie für Freunde und Förderer der Fakultät Physik der TU Dortmund. Gegründet auf Initiative einiger Absolventen ist es seine Aufgabe, ein Netzwerk zwischen den Absolventen und der Fakultät aufzubauen.}
+\end{quote}
+\begin{itemize}
+  \item Networking
+  \item Stammtisch
+  \item Rhetorik-Seminar
+  \item Stipendien
+  \item Sommerakademie
+  \item …
+\end{itemize}
+\textbf{\url{http://pep-dortmund.org}}
+
+\section{Installation}
+Ein \verb|\| am Ende einer Eingabezeile bedeutet, dass die Zeile aus Platzgründen gebrochen wurde.
+Man sollte das \verb|\| weglassen und die Zeile ganz, ohne Umbruch eingeben.
+Der Abschnitt \ref{install-test} gilt für alle Unix-artigen Betriebssysteme, also sowohl Linux als auch Mac OS X.
+
+\subsection{Mac OS X}
+
+% TODO: aktualisieren
+
+Am einfachsten ist die Installation bei OS X unter Verwendung von Mac Ports.
+Auf der Website \url{http://www.macports.org/} gibt es ein entsprechendes .dmg.
+Dabei ist zu beachten, dass XCode installiert sein muss. Sollte kein XCode vorhanden sein, ist es auf der OS X Installations-DVD zu finden oder kann über den AppStore heruntergeladen werden (OS X 10.7 vorausgesetzt).
+
+Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach.
+In der Kommandozeile (z.B. Terminal.app) wird einfach
+\begin{verbatim}
+sudo port install gmake git-core python27 py27-ipython py27-numpy \
+py27-scipy py27-matplotlib kdiff3 py27-pyqt4 py27-sip py27-pygments
+\end{verbatim}
+eingegeben.
+Das Ausführen von
+\begin{verbatim}
+sudo port select python python27
+\end{verbatim}
+sorgt dafür, dass die neu installierte Python-Version als Standard verwendet wird und nicht die von Apple mitgelieferte.
+
+Mitte Oktober 2012 wird eine neue Version von Matplotlib erscheinen.
+Diese wird auch mit Python 3 funktionieren und über MacPorts erhältlich sein.
+Sobald diese Versionen verfügbar sind, wird ihre Verwendung empfohlen.
+Diese Anleitung wird dann entsprechend aktualisiert.
+
+\subsection{Ubuntu 13.04}
+Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per Kommandozeile installieren.
+
+\subsubsection{Git}
+Die Versionskontrolle 'Git' installiert man mit dem Befehl
+\begin{verbatim}
+sudo apt-get install git
+\end{verbatim}
+
+\subsubsection{Python und Bibliotheken}
+Zusätzlich zu Python 3 sollte man die Python-Bibliotheken NumPy und SciPy (für wissenschaftliche Berechnungen) installieren.
+Bei IPython handelt es sich um eine interaktive Konsole für Python, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte ausführen kann.
+Der Installationsbefehl lautet
+\begin{verbatim}
+sudo apt-get install python3-numpy python3-scipy python3-matplotlib ipython3-notebook
+\end{verbatim}
+
+\subsection{Arch Linux}
+\begin{verbatim}
+sudo pacman -S git python-numpy python-scipy python-matplotlib \
+ipython pyqt sip python-pygments python-pyzmq
+\end{verbatim}
+
+\subsection{Einstellungen und Testen}
+\label{install-test}
+Git und Matplotlib einstellen (eigene Daten eintragen):
+\begin{verbatim}
+git config --global user.email "XXX@udo.edu"
+git config --global user.name "XXX"
+mkdir -p ~/.matplotlib
+echo 'backend : Qt4Agg' > ~/.matplotlib/matplotlibrc
+\end{verbatim}
+Jetzt kann man noch testen, ob alles vernünftig funktioniert:
+\begin{verbatim}
+ipython3 --pylab
+plot([0,1])
+\end{verbatim}
+Nach dieser Eingabe sollte ein Plot erscheinen.
