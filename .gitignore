@@ -26,3 +26,6 @@
 *.synctex.gz
 
 # Custom
+
+*.pdf
+.ipynb_checkpoints
