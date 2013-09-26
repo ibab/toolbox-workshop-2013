@@ -24,6 +24,10 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.bcf
+*.nav
+*.run.xml
+*.snm
 
 # Custom
 
