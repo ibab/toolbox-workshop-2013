@@ -8,8 +8,7 @@ from pylab import *
 
 x = linspace(0, 1)
 
-plot(x, x**2, 'b-', label=r'$x^2$')
-plot(x, x**5, 'gx', label=r'$x^5$')
+plot(x, x**2, 'b-')
 xlabel(r'$x$')
-legend(loc='best')
-savefig('3.pdf')
+ylabel(r'$x^2$')
+savefig('1.pdf')
