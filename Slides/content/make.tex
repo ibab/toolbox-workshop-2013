@@ -37,3 +37,20 @@
     \item[\texttt{recipe}] Befehle, um \texttt{target} aus \texttt{prerequisites} zu erstellen
   \end{description}
 \end{frame}
+
+\begin{frame}{Beispiel}
+  \texttt{all: report.pdf\\[0.5cm]
+    plot.pdf: plot.py daten.txt\\
+    \hspace{1cm} python2 plot.py\\[0.5cm]
+    report.pdf: report.tex plot.pdf\\
+    \hspace{1cm} latex report.tex\\[0.5cm]
+    .PHONY: all
+  }
+
+  \begin{itemize}
+    \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}
+    \item \texttt{all} braucht \texttt{report.pdf}, also wird er erzeugt
+    \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
+    \item Die letzte Zeile bewirkt, dass \texttt{make} weiß, dass \texttt{all} keine echte Datei ist
+  \end{itemize}
+\end{frame}
