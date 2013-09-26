@@ -1,0 +1,76 @@
+\newcommand{\mail}{\includegraphics[width=0.2\textwidth]{figures/mail.pdf}}
+\tikzstyle{arr}=[line width=1mm,draw=black,-triangle 45]
+
+\begin{frame}
+    \centering
+    \includegraphics[width=0.7\textwidth]{logos/git.pdf}
+    
+    \vspace{1em}
+
+    \begin{itemize}
+      \item Ein sogenanntes \enquote{Version Control System}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mail-basierte Arbeitsweise}
+  \centering
+   \begin{tikzpicture}
+     \node[align=center,fill=green!20,rounded corners=1em] (alice) at (0, 0) {
+       Alice\\
+       \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+     };
+     \node[align=center,fill=red!20,rounded corners=1em] (bob) at (7, 0) {
+       Bob\\
+       \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+     };
+     \uncover<2-> {
+       \draw[arr] (alice) -- node {\mail} (bob);
+     }
+   \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Mails: Probleme}
+
+\end{frame}
+
+\begin{frame}{Dropbox-basierte Arbeitsweise}
+  \centering
+   \begin{tikzpicture}
+     \node[align=center,fill=green!20,rounded corners=1em] (alice) at (0, 0) {
+       Alice\\
+       \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+     };
+     \uncover<3->{
+       \node[align=center,fill=blue!20,rounded corners=1em] (dropbox) at (4, 3) {
+         \includegraphics[width=0.1\textwidth]{logos/dropbox.pdf}\\
+         \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+       };
+     }
+     \node[align=center,fill=red!20,rounded corners=1em] (bob) at (8, 0) {
+       Bob\\
+       \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+     };
+     \uncover<4> {
+       \draw[arr,triangle 45-triangle 45] (alice) -- (dropbox);
+     }
+     \uncover<4-> {
+       \draw[arr,triangle 45-triangle 45] (dropbox) -- (bob);
+     }
+   \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Dropbox: Probleme}
+\end{frame}
+
+% Mail based workflow
+%  
+% 
+%
+
+% Dropbox based workflow
+% 3 problems:
+% - no messages -> don't know what's going on without asking
+% - no history -> can't take a look at a previous version
+% - no merging -> conflicting changes get overwritten -> must work on seperate files at all times
+
+
