@@ -27,6 +27,9 @@
 \begin{frame}{Makefile}
   \begin{itemize}
     \item Datei heißt \texttt{Makefile}, keine Endung!
+      \begin{itemize}
+        \item bei Windows Dateiendungen einschalten! (\url{http://support.microsoft.com/kb/865219/de})
+      \end{itemize}
     \item besteht aus Rules:
   \end{itemize}
   \begin{block}{Rule}
@@ -34,25 +37,24 @@
     \hspace{1cm} recipe}
   \end{block}
   \begin{description}
-    \item[\texttt{target}] Datei (oder mehrere), die von dieser Rule erzeugt wird
+    \item[\texttt{target}] Datei(en), die von dieser Rule erzeugt wird
     \item[\texttt{prerequisites}] Dateien, von denen diese Rule abhängt
-    \item[\texttt{recipe}] Befehle, um \texttt{target} aus \texttt{prerequisites} zu erstellen
+    \item[\texttt{recipe}] Befehle: \texttt{prerequisites} $\rightarrow$ \texttt{target}
   \end{description}
 \end{frame}
 
 \begin{frame}{Beispiel}
-  \texttt{all: report.pdf\\[0.5cm]
+  \texttt{\footnotesize
+    all: report.pdf\\[0.3cm]
     plot.pdf: plot.py daten.txt\\
-    \hspace{1cm} python2 plot.py\\[0.5cm]
+    \hspace{1cm} python2 plot.py\\[0.3cm]
     report.pdf: report.tex plot.pdf\\
-    \hspace{1cm} latex report.tex\\[0.5cm]
-    .PHONY: all
+    \hspace{1cm} latex report.tex\\[0.3cm]
   }
 
   \begin{itemize}
     \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make target}
     \item \texttt{all} braucht \texttt{report.pdf}, also wird er erzeugt
     \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
-    \item Die letzte Zeile bewirkt, dass \texttt{make} weiß, dass \texttt{all} keine echte Datei ist
   \end{itemize}
 \end{frame}
