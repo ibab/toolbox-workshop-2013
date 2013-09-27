@@ -13,7 +13,7 @@
     \vspace{1em}
 
     \begin{itemize}
-      \item Ein sogenanntes \enquote{Version Control System}
+      \item Ein sogenanntes Version Control System
     \end{itemize}
 \end{frame}
 
@@ -26,7 +26,9 @@
      };
      \node[align=center,fill=red!20,rounded corners=1em] (bob) at (7, 0) {
        Bob\\
+       {\uncover<3->{
        \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+       }}
      };
      \uncover<2-> {
        \draw[arr] (alice) -- node {\mail} (bob);
@@ -35,7 +37,15 @@
 \end{frame}
 
 \begin{frame}{Mails: Probleme}
-
+  \begin{itemize}
+    \item Risiko, dass Änderungen vergessen werden, ist groß
+    \item Bei jedem Abgleich muss jemand anders aktiv werden
+      \begin{itemize}
+        \item Stört
+        \item Es kommt zu Verzögerungen
+      \end{itemize}
+  \end{itemize}
+  Fazit: Eine sehr unbequeme Lösung
 \end{frame}
 
 \begin{frame}{Dropbox-basierte Arbeitsweise}
@@ -64,16 +74,13 @@
    \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Dropbox: Probleme}
-\end{frame}
-
 % Mail based workflow
 %  
 % 
 %
 
 % Dropbox based workflow
-% 3 problems:
+%3 problems:
 % - no messages -> don't know what's going on without asking
 % - no history -> can't take a look at a previous version
 % - no merging -> conflicting changes get overwritten -> must work on seperate files at all times
