@@ -23,12 +23,14 @@ langlist = [
     'Java', 'Java', 'Java', 'Java', 'Java', 'Java', 'JavaScript', 'Lua',
     'Matlab', 'ObjC', 'ObjC', 'ObjC', 'PHP', 'PHP'
 ]
-langs = list(reversed(sorted(set(langlist))))
-counts = [langlist.count(x) for x in langs]
+langs = list(set(langlist))
+keys = sorted(langs, key=langlist.count)
+vals = list(map(langlist.count, keys))
+
 width = .75
 indices = np.arange(len(langs))
-plt.barh(indices, counts, width, color='#729fcf')
-plt.yticks(indices + width / 2, langs)
+plt.barh(indices, vals, width, color='#729fcf')
+plt.yticks(indices + width / 2, keys)
 plt.ylim(-0.75, len(langs)+0.5)
 plt.savefig('otherlangs.pdf', bbox_inches='tight')
 plt.clf()
