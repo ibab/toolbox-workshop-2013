@@ -33,3 +33,6 @@
 
 *.pdf
 .ipynb_checkpoints
+
+# OSX
+.DS_Store
