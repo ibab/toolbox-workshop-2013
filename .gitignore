@@ -33,6 +33,7 @@
 
 *.pdf
 .ipynb_checkpoints
+*.pyc
 
 # OSX
 .DS_Store
