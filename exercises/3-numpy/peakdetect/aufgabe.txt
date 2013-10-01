@@ -1,3 +1,4 @@
+Entnommen aus Versuch 354.
 Ziel ist es, Exponentialfunktionen an die Maxima und Minima der abklingenden Schwingung zu fitten.
 Dabei sollte die Funktion
 
