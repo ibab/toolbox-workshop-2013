@@ -7,7 +7,9 @@
 \end{frame}
 
 \begin{frame}{Automatisierte, reproduzierbare Prozesse}
-  Problem:
+
+  {\huge Problem:}
+  \vspace{1em}
   \begin{itemize}
     \item kurz vor Abgabe noch die neuesten Korrekturen pullen
       \begin{itemize}
@@ -16,7 +18,12 @@
     \item \TeX{} ausführen, ausdrucken
     \item vergessen, Plot auszuführen
   \end{itemize}
-  Lösung: Make!
+\end{frame}
+
+\begin{frame}{Automatisierte, reproduzierbare Prozesse}
+
+  {\huge Lösung: Make!}
+  \vspace{1em}
   \begin{itemize}
     \item sieht, welche Dateien geändert wurden
     \item berechnet nötige Operationen
@@ -43,7 +50,7 @@
   \end{description}
 \end{frame}
 
-\begin{frame}{Beispiel}
+\begin{frame}[shrink]{Beispiel}
   \texttt{\footnotesize
     all: report.pdf\\[0.3cm]
     plot.pdf: plot.py daten.txt\\
@@ -53,8 +60,8 @@
   }
 
   \begin{itemize}
-    \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make target}
-    \item \texttt{all} braucht \texttt{report.pdf}, also wird er erzeugt
+    \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make \textit{target}}
+    \item \texttt{all} braucht \texttt{report.pdf}, also wird \texttt{latex report.tex} ausgeführt
     \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
   \end{itemize}
 \end{frame}
