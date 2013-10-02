@@ -8,6 +8,12 @@
 \headlineframe{Idee: Austausch über Mails}
 
 \begin{frame}{Mails: Probleme}
+  \centering
+  \begin{tikzpicture}
+    \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \node (bob) at (8, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \draw[arr] (alice) -- node {\mail} (bob);
+  \end{tikzpicture}
   \begin{itemize}
     \item Risiko, dass Änderungen vergessen werden, ist groß
     \item Bei jedem Abgleich muss jemand anders aktiv werden
@@ -22,6 +28,17 @@
 \headlineframe{Idee: Austausch über Dropbox}
 
 \begin{frame}{Dropbox: Probleme}
+  \centering
+  \begin{tikzpicture}
+    \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \node[align=center,fill=blue!20,rounded corners=1em] (dropbox) at (4, 0.5) {
+      \includegraphics[width=0.1\textwidth]{logos/dropbox.pdf}\\
+      \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+    };
+    \node (bob) at (8, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \draw[arr,triangle 45-triangle 45] (0.8, 0) -- (dropbox);
+    \draw[arr,triangle 45-triangle 45] (dropbox) -- (7.2, 0);
+  \end{tikzpicture}
   
   \begin{itemize}
     \item Man merkt nichts von Änderungen der anderen
@@ -60,8 +77,9 @@
   \begin{itemize}
     \item Erzeugen mit \texttt{git init}
   \end{itemize}
+  \vspace{3em}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[line width=1.5]
     \node (wd) at (0, 0) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=red!20] {Working directory};
     \node (idx) [below=0.4cm of wd,draw,thick,rounded corners,minimum width=4cm,minimum height=1.2cm,fill=yellow!20] {Index};
     \node (hist) [below=0.4cm of idx,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
@@ -91,8 +109,6 @@
     \item \texttt{git commit} ausführen um zu bestätigen
   \end{enumerate}
 \end{frame}
-
-\headlineframe{Bis hier hin: das Allerwichtigste\\ Jetzt: Extra-Befehle}
 
 \begin{frame}{Weitere nützliche Befehle}
   \begin{itemize}
